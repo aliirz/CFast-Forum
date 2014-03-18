@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CFForumsViewController : UITableViewController
+@property (nonatomic, strong) NSArray *topics;
 
 @end
