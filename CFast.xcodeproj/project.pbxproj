@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4138D19D18D31016001C0382 /* CFHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4138D19B18D31016001C0382 /* CFHomeViewController.m */; };
+		4138D19E18D31016001C0382 /* CFHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4138D19C18D31016001C0382 /* CFHomeViewController.xib */; };
 		41FC351918C5D29C009CF89A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41FC351818C5D29C009CF89A /* Foundation.framework */; };
 		41FC351B18C5D29C009CF89A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41FC351A18C5D29C009CF89A /* CoreGraphics.framework */; };
 		41FC351D18C5D29C009CF89A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41FC351C18C5D29C009CF89A /* UIKit.framework */; };
@@ -19,6 +21,18 @@
 		41FC353418C5D29D009CF89A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41FC351C18C5D29C009CF89A /* UIKit.framework */; };
 		41FC353C18C5D29D009CF89A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41FC353A18C5D29D009CF89A /* InfoPlist.strings */; };
 		41FC353E18C5D29D009CF89A /* CFastTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FC353D18C5D29D009CF89A /* CFastTests.m */; };
+		41FC354B18C5D3AC009CF89A /* CFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FC354918C5D3AC009CF89A /* CFLoginViewController.m */; };
+		41FC354C18C5D3AC009CF89A /* CFLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41FC354A18C5D3AC009CF89A /* CFLoginViewController.xib */; };
+		41FC354E18C5EA9B009CF89A /* logo3.png in Resources */ = {isa = PBXBuildFile; fileRef = 41FC354D18C5EA9B009CF89A /* logo3.png */; };
+		41FC355218C5EEE8009CF89A /* CFCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FC355018C5EEE8009CF89A /* CFCategoryViewController.m */; };
+		41FC355318C5EEE8009CF89A /* CFCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41FC355118C5EEE8009CF89A /* CFCategoryViewController.xib */; };
+		41FC355718C5EEF6009CF89A /* CFSelfPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FC355518C5EEF6009CF89A /* CFSelfPostsViewController.m */; };
+		41FC355818C5EEF6009CF89A /* CFSelfPostsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41FC355618C5EEF6009CF89A /* CFSelfPostsViewController.xib */; };
+		41FC355C18C5EF3E009CF89A /* CFForumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FC355A18C5EF3E009CF89A /* CFForumsViewController.m */; };
+		41FC355D18C5EF3E009CF89A /* CFForumsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41FC355B18C5EF3E009CF89A /* CFForumsViewController.xib */; };
+		41FC356118C5F177009CF89A /* CFProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FC355F18C5F177009CF89A /* CFProfileViewController.m */; };
+		41FC356218C5F177009CF89A /* CFProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41FC356018C5F177009CF89A /* CFProfileViewController.xib */; };
+		81ABAB7363CD4E639B6E3D9D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96830B23926F40BA861DB61C /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4138D19A18D31016001C0382 /* CFHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFHomeViewController.h; sourceTree = "<group>"; };
+		4138D19B18D31016001C0382 /* CFHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFHomeViewController.m; sourceTree = "<group>"; };
+		4138D19C18D31016001C0382 /* CFHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CFHomeViewController.xib; sourceTree = "<group>"; };
 		41FC351518C5D29C009CF89A /* CFast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CFast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41FC351818C5D29C009CF89A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		41FC351A18C5D29C009CF89A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,6 +65,24 @@
 		41FC353918C5D29D009CF89A /* CFastTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CFastTests-Info.plist"; sourceTree = "<group>"; };
 		41FC353B18C5D29D009CF89A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		41FC353D18C5D29D009CF89A /* CFastTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFastTests.m; sourceTree = "<group>"; };
+		41FC354818C5D3AC009CF89A /* CFLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFLoginViewController.h; sourceTree = "<group>"; };
+		41FC354918C5D3AC009CF89A /* CFLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFLoginViewController.m; sourceTree = "<group>"; };
+		41FC354A18C5D3AC009CF89A /* CFLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CFLoginViewController.xib; sourceTree = "<group>"; };
+		41FC354D18C5EA9B009CF89A /* logo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo3.png; sourceTree = "<group>"; };
+		41FC354F18C5EEE8009CF89A /* CFCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFCategoryViewController.h; sourceTree = "<group>"; };
+		41FC355018C5EEE8009CF89A /* CFCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFCategoryViewController.m; sourceTree = "<group>"; };
+		41FC355118C5EEE8009CF89A /* CFCategoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CFCategoryViewController.xib; sourceTree = "<group>"; };
+		41FC355418C5EEF6009CF89A /* CFSelfPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFSelfPostsViewController.h; sourceTree = "<group>"; };
+		41FC355518C5EEF6009CF89A /* CFSelfPostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFSelfPostsViewController.m; sourceTree = "<group>"; };
+		41FC355618C5EEF6009CF89A /* CFSelfPostsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CFSelfPostsViewController.xib; sourceTree = "<group>"; };
+		41FC355918C5EF3E009CF89A /* CFForumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFForumsViewController.h; sourceTree = "<group>"; };
+		41FC355A18C5EF3E009CF89A /* CFForumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFForumsViewController.m; sourceTree = "<group>"; };
+		41FC355B18C5EF3E009CF89A /* CFForumsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CFForumsViewController.xib; sourceTree = "<group>"; };
+		41FC355E18C5F177009CF89A /* CFProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFProfileViewController.h; sourceTree = "<group>"; };
+		41FC355F18C5F177009CF89A /* CFProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFProfileViewController.m; sourceTree = "<group>"; };
+		41FC356018C5F177009CF89A /* CFProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CFProfileViewController.xib; sourceTree = "<group>"; };
+		67E8421192A842C2A4881232 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		96830B23926F40BA861DB61C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +93,7 @@
 				41FC351B18C5D29C009CF89A /* CoreGraphics.framework in Frameworks */,
 				41FC351D18C5D29C009CF89A /* UIKit.framework in Frameworks */,
 				41FC351918C5D29C009CF89A /* Foundation.framework in Frameworks */,
+				81ABAB7363CD4E639B6E3D9D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +117,7 @@
 				41FC353718C5D29D009CF89A /* CFastTests */,
 				41FC351718C5D29C009CF89A /* Frameworks */,
 				41FC351618C5D29C009CF89A /* Products */,
+				67E8421192A842C2A4881232 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +137,7 @@
 				41FC351A18C5D29C009CF89A /* CoreGraphics.framework */,
 				41FC351C18C5D29C009CF89A /* UIKit.framework */,
 				41FC353118C5D29D009CF89A /* XCTest.framework */,
+				96830B23926F40BA861DB61C /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -107,6 +145,8 @@
 		41FC351E18C5D29C009CF89A /* CFast */ = {
 			isa = PBXGroup;
 			children = (
+				41FC354D18C5EA9B009CF89A /* logo3.png */,
+				41FC354718C5D394009CF89A /* ViewControllers */,
 				41FC352718C5D29C009CF89A /* CFAppDelegate.h */,
 				41FC352818C5D29C009CF89A /* CFAppDelegate.m */,
 				41FC352A18C5D29D009CF89A /* Images.xcassets */,
@@ -144,6 +184,31 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		41FC354718C5D394009CF89A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				41FC354818C5D3AC009CF89A /* CFLoginViewController.h */,
+				41FC354918C5D3AC009CF89A /* CFLoginViewController.m */,
+				41FC354A18C5D3AC009CF89A /* CFLoginViewController.xib */,
+				41FC354F18C5EEE8009CF89A /* CFCategoryViewController.h */,
+				41FC355018C5EEE8009CF89A /* CFCategoryViewController.m */,
+				41FC355118C5EEE8009CF89A /* CFCategoryViewController.xib */,
+				41FC355418C5EEF6009CF89A /* CFSelfPostsViewController.h */,
+				41FC355518C5EEF6009CF89A /* CFSelfPostsViewController.m */,
+				41FC355618C5EEF6009CF89A /* CFSelfPostsViewController.xib */,
+				41FC355918C5EF3E009CF89A /* CFForumsViewController.h */,
+				41FC355A18C5EF3E009CF89A /* CFForumsViewController.m */,
+				41FC355B18C5EF3E009CF89A /* CFForumsViewController.xib */,
+				41FC355E18C5F177009CF89A /* CFProfileViewController.h */,
+				41FC355F18C5F177009CF89A /* CFProfileViewController.m */,
+				41FC356018C5F177009CF89A /* CFProfileViewController.xib */,
+				4138D19A18D31016001C0382 /* CFHomeViewController.h */,
+				4138D19B18D31016001C0382 /* CFHomeViewController.m */,
+				4138D19C18D31016001C0382 /* CFHomeViewController.xib */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -151,9 +216,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 41FC354118C5D29D009CF89A /* Build configuration list for PBXNativeTarget "CFast" */;
 			buildPhases = (
+				D1962C5530AA41AFBE2317F1 /* Check Pods Manifest.lock */,
 				41FC351118C5D29C009CF89A /* Sources */,
 				41FC351218C5D29C009CF89A /* Frameworks */,
 				41FC351318C5D29C009CF89A /* Resources */,
+				DD851B2406C14755ADBC1E33 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -220,7 +287,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41FC354E18C5EA9B009CF89A /* logo3.png in Resources */,
+				41FC355D18C5EF3E009CF89A /* CFForumsViewController.xib in Resources */,
+				41FC355818C5EEF6009CF89A /* CFSelfPostsViewController.xib in Resources */,
+				41FC355318C5EEE8009CF89A /* CFCategoryViewController.xib in Resources */,
 				41FC352318C5D29C009CF89A /* InfoPlist.strings in Resources */,
+				41FC356218C5F177009CF89A /* CFProfileViewController.xib in Resources */,
+				41FC354C18C5D3AC009CF89A /* CFLoginViewController.xib in Resources */,
+				4138D19E18D31016001C0382 /* CFHomeViewController.xib in Resources */,
 				41FC352B18C5D29D009CF89A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,13 +309,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D1962C5530AA41AFBE2317F1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DD851B2406C14755ADBC1E33 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		41FC351118C5D29C009CF89A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41FC355718C5EEF6009CF89A /* CFSelfPostsViewController.m in Sources */,
+				41FC355C18C5EF3E009CF89A /* CFForumsViewController.m in Sources */,
+				4138D19D18D31016001C0382 /* CFHomeViewController.m in Sources */,
+				41FC354B18C5D3AC009CF89A /* CFLoginViewController.m in Sources */,
 				41FC352518C5D29C009CF89A /* main.m in Sources */,
 				41FC352918C5D29C009CF89A /* CFAppDelegate.m in Sources */,
+				41FC355218C5EEE8009CF89A /* CFCategoryViewController.m in Sources */,
+				41FC356118C5F177009CF89A /* CFProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +470,7 @@
 		};
 		41FC354218C5D29D009CF89A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67E8421192A842C2A4881232 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -370,6 +484,7 @@
 		};
 		41FC354318C5D29D009CF89A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67E8421192A842C2A4881232 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -442,6 +557,7 @@
 				41FC354318C5D29D009CF89A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		41FC354418C5D29D009CF89A /* Build configuration list for PBXNativeTarget "CFastTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +566,7 @@
 				41FC354618C5D29D009CF89A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

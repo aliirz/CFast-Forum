@@ -7,6 +7,10 @@
 //
 
 #import "CFAppDelegate.h"
+#import "CFLoginViewController.h"
+#import "CFCategoryViewController.h"
+#import "CJSONDeserializer.h"
+#import "CJSONSerializer.h"
 
 @implementation CFAppDelegate
 
@@ -14,6 +18,32 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    UINavigationController *nav = [[UINavigationController alloc]init];
+    
+    CFLoginViewController *loginVC = [[CFLoginViewController alloc]init];
+    CFCategoryViewController *categoryVC = [[CFCategoryViewController alloc] init];
+    
+//    NSUserDefaults *_preferences = [[NSUserDefaults alloc]init];
+    NSString *userid = [[NSUserDefaults standardUserDefaults] stringForKey:@"userid"];
+    if(userid != NULL)
+    {
+//        [[LRResty client] get:@"http://192.168.100.100/Cfast.Api/api/post" withBlock:^(LRRestyResponse *r) {
+//            NSData *responseData = [[r asString] dataUsingEncoding:NSUTF8StringEncoding];
+//            NSError *theError = nil;
+//            NSArray *responseArray = [[CJSONDeserializer deserializer] deserializeAsArray:responseData error:&theError];
+//        }];
+        categoryVC.loggedIn = YES;
+        [nav pushViewController:categoryVC animated:NO];
+        
+    }
+    else
+    {
+        [nav pushViewController:loginVC animated:NO];
+    }
+    
+    self.window.rootViewController = nav;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
