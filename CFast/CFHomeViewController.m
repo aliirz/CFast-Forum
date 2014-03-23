@@ -7,6 +7,8 @@
 //
 
 #import "CFHomeViewController.h"
+#import "CFCategoryViewController.h"
+#import "CFProfileViewController.h"
 
 @interface CFHomeViewController ()
 
@@ -26,6 +28,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.forumButton.buttonColor = [UIColor carrotColor];
+    self.forumButton.shadowColor = [UIColor pumpkinColor];
+    self.forumButton.shadowHeight = 3.0f;
+    self.forumButton.cornerRadius = 6.0f;
+    self.forumButton.titleLabel.font = [UIFont boldFlatFontOfSize:16];
+    [self.forumButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
+    [self.forumButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
+    
+    self.settingsButton.buttonColor = [UIColor carrotColor];
+    self.settingsButton.shadowColor = [UIColor pumpkinColor];
+    self.settingsButton.shadowHeight = 3.0f;
+    self.settingsButton.cornerRadius = 6.0f;
+    self.settingsButton.titleLabel.font = [UIFont boldFlatFontOfSize:16];
+    [self.settingsButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
+    [self.settingsButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -35,4 +52,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)shoForum:(id)sender {
+    CFCategoryViewController *categories = [[CFCategoryViewController alloc]init];
+    categories.loggedIn = YES;
+    [self.navigationController pushViewController:categories animated:YES];
+}
+
+- (IBAction)showProfile:(id)sender {
+    CFProfileViewController *profileVC = [[CFProfileViewController alloc]init];
+    [self.navigationController pushViewController:profileVC animated:YES];
+}
 @end

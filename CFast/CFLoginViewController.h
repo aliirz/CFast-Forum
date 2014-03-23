@@ -13,5 +13,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *passwordField;
 @property (strong,nonatomic) NSUserDefaults *preferences;
 - (IBAction)logIn:(id)sender;
+@property (strong, nonatomic) IBOutlet FUIButton *loginBtn;
 
 @end

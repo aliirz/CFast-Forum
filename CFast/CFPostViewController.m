@@ -1,21 +1,21 @@
 //
-//  CFCategoryViewController.m
+//  CFPostViewController.m
 //  CFast
 //
-//  Created by Ali Raza on 04/03/2014.
+//  Created by Ali Raza on 19/03/2014.
 //  Copyright (c) 2014 Welltime Ltd. All rights reserved.
 //
 
-#import "CFCategoryViewController.h"
+#import "CFPostViewController.h"
 #import "CJSONDeserializer.h"
 #import "CJSONSerializer.h"
-#import "CFForumsViewController.h"
+#import "CFReplyViewController.h"
 
-@interface CFCategoryViewController ()
+@interface CFPostViewController ()
 
 @end
 
-@implementation CFCategoryViewController
+@implementation CFPostViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -30,17 +30,6 @@
 {
     [super viewDidLoad];
 
-    if(self.loggedIn)
-    {
-        [[LRResty client] get:@"http://192.168.100.100/Cfast.Api/api/post" withBlock:^(LRRestyResponse *r)
-        {
-            NSData *responseData = [[r asString] dataUsingEncoding:NSUTF8StringEncoding];
-            NSError *theError = nil;
-            self.categories = [[CJSONDeserializer deserializer] deserializeAsArray:responseData error:&theError];
-            [self.tableView reloadData];
-            }
-         ];
-    }
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -67,7 +56,7 @@
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [self.categories count];
+    return [self.posts count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -76,18 +65,33 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+        cell.textLabel.numberOfLines = 0;
     }
     
+    
+    
+    // Configure the cell...
+    NSDictionary *thepost = [self.posts objectAtIndex:[indexPath row]];
+    cell.textLabel.text = [thepost objectForKey:@"MESSAGE"];
+    cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:17.0];
+    cell.detailTextLabel.text = [thepost objectForKey:@"NAME"];
     
     [cell configureFlatCellWithColor:[UIColor carrotColor] selectedColor:[UIColor pumpkinColor]];
     cell.textLabel.textColor = [UIColor cloudsColor];
     
-    NSDictionary *category = [self.categories objectAtIndex:[indexPath row]];
-    cell.textLabel.text = [category objectForKey:@"TITLE"];
-    
-    // Configure the cell...
-    
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *thepost = [self.posts objectAtIndex:[indexPath row]];
+    NSString *cellText = [thepost objectForKey:@"MESSAGE"];
+    UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:17.0];
+    CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
+    CGSize labelSize = [cellText sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
+    
+    return labelSize.height + 20;
 }
 
 /*
@@ -129,26 +133,18 @@
 }
 */
 
+
 #pragma mark - Table view delegate
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CFForumsViewController *posts = [[CFForumsViewController alloc]init];
-    NSDictionary *category = [self.categories objectAtIndex:[indexPath row]];
+    CFReplyViewController *replyVC = [[CFReplyViewController alloc]init];
+    replyVC.replyTo = [self.posts objectAtIndex:[indexPath row]];
     
-    [[LRResty client] get:[NSString stringWithFormat:@"http://192.168.100.100/Cfast.Api/api/post/%@",[category objectForKey:@"ID"]] withBlock:^(LRRestyResponse *r)
-    {
-        
-        NSData *responseData = [[r asString] dataUsingEncoding:NSUTF8StringEncoding];
-        NSError *theError = nil;
-        posts.topics = [[CJSONDeserializer deserializer] deserializeAsArray:responseData error:&theError];
-        [self.navigationController pushViewController:posts animated:YES];
-
-     }
-     ];
+    [self.navigationController pushViewController:replyVC animated:YES];
 }
  
- 
+
 
 @end

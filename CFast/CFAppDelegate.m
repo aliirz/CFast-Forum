@@ -11,7 +11,7 @@
 #import "CFCategoryViewController.h"
 #import "CJSONDeserializer.h"
 #import "CJSONSerializer.h"
-
+#import "CFHomeViewController.h"
 @implementation CFAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -21,8 +21,12 @@
     
     UINavigationController *nav = [[UINavigationController alloc]init];
     
+    [nav.navigationBar configureFlatNavigationBarWithColor:[UIColor pumpkinColor]];
+
     CFLoginViewController *loginVC = [[CFLoginViewController alloc]init];
-    CFCategoryViewController *categoryVC = [[CFCategoryViewController alloc] init];
+    CFHomeViewController  *homeVC = [[CFHomeViewController alloc]init];
+//    CFCategoryViewController *categoryVC = [[CFCategoryViewController alloc] init];
+    
     
 //    NSUserDefaults *_preferences = [[NSUserDefaults alloc]init];
     NSString *userid = [[NSUserDefaults standardUserDefaults] stringForKey:@"userid"];
@@ -33,8 +37,9 @@
 //            NSError *theError = nil;
 //            NSArray *responseArray = [[CJSONDeserializer deserializer] deserializeAsArray:responseData error:&theError];
 //        }];
-        categoryVC.loggedIn = YES;
-        [nav pushViewController:categoryVC animated:NO];
+//        categoryVC.loggedIn = YES;
+        
+        [nav pushViewController:homeVC animated:NO];
         
     }
     else

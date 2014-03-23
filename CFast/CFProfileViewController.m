@@ -26,6 +26,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.updateDetailsBtn.buttonColor = [UIColor carrotColor];
+    self.updateDetailsBtn.shadowColor = [UIColor pumpkinColor];
+    self.updateDetailsBtn.shadowHeight = 3.0f;
+    self.updateDetailsBtn.cornerRadius = 6.0f;
+    self.updateDetailsBtn.titleLabel.font = [UIFont boldFlatFontOfSize:16];
+    [self.updateDetailsBtn setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
+    [self.updateDetailsBtn setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
+    
+    self.updatePasswordBtn.buttonColor = [UIColor carrotColor];
+    self.updatePasswordBtn.shadowColor = [UIColor pumpkinColor];
+    self.updatePasswordBtn.shadowHeight = 3.0f;
+    self.updatePasswordBtn.cornerRadius = 6.0f;
+    self.updatePasswordBtn.titleLabel.font = [UIFont boldFlatFontOfSize:16];
+    [self.updatePasswordBtn setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
+    [self.updatePasswordBtn setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
     // Do any additional setup after loading the view from its nib.
 }
 

@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		411E102E18DEEC1600CB8BA7 /* CFPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 411E102C18DEEC1600CB8BA7 /* CFPasswordViewController.m */; };
+		411E102F18DEEC1600CB8BA7 /* CFPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 411E102D18DEEC1600CB8BA7 /* CFPasswordViewController.xib */; };
 		4138D19D18D31016001C0382 /* CFHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4138D19B18D31016001C0382 /* CFHomeViewController.m */; };
 		4138D19E18D31016001C0382 /* CFHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4138D19C18D31016001C0382 /* CFHomeViewController.xib */; };
+		41F5D45818D9D9950084527A /* CFPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F5D45618D9D9950084527A /* CFPostViewController.m */; };
+		41F5D45918D9D9950084527A /* CFPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41F5D45718D9D9950084527A /* CFPostViewController.xib */; };
+		41F5D45D18D9E3880084527A /* CFReplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F5D45B18D9E3880084527A /* CFReplyViewController.m */; };
+		41F5D45E18D9E3880084527A /* CFReplyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41F5D45C18D9E3880084527A /* CFReplyViewController.xib */; };
 		41FC351918C5D29C009CF89A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41FC351818C5D29C009CF89A /* Foundation.framework */; };
 		41FC351B18C5D29C009CF89A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41FC351A18C5D29C009CF89A /* CoreGraphics.framework */; };
 		41FC351D18C5D29C009CF89A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41FC351C18C5D29C009CF89A /* UIKit.framework */; };
@@ -46,9 +52,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		411E102B18DEEC1600CB8BA7 /* CFPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPasswordViewController.h; sourceTree = "<group>"; };
+		411E102C18DEEC1600CB8BA7 /* CFPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPasswordViewController.m; sourceTree = "<group>"; };
+		411E102D18DEEC1600CB8BA7 /* CFPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CFPasswordViewController.xib; sourceTree = "<group>"; };
 		4138D19A18D31016001C0382 /* CFHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFHomeViewController.h; sourceTree = "<group>"; };
 		4138D19B18D31016001C0382 /* CFHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFHomeViewController.m; sourceTree = "<group>"; };
 		4138D19C18D31016001C0382 /* CFHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CFHomeViewController.xib; sourceTree = "<group>"; };
+		41F5D45518D9D9950084527A /* CFPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFPostViewController.h; sourceTree = "<group>"; };
+		41F5D45618D9D9950084527A /* CFPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFPostViewController.m; sourceTree = "<group>"; };
+		41F5D45718D9D9950084527A /* CFPostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CFPostViewController.xib; sourceTree = "<group>"; };
+		41F5D45A18D9E3880084527A /* CFReplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFReplyViewController.h; sourceTree = "<group>"; };
+		41F5D45B18D9E3880084527A /* CFReplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFReplyViewController.m; sourceTree = "<group>"; };
+		41F5D45C18D9E3880084527A /* CFReplyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CFReplyViewController.xib; sourceTree = "<group>"; };
 		41FC351518C5D29C009CF89A /* CFast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CFast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41FC351818C5D29C009CF89A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		41FC351A18C5D29C009CF89A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -205,6 +220,15 @@
 				4138D19A18D31016001C0382 /* CFHomeViewController.h */,
 				4138D19B18D31016001C0382 /* CFHomeViewController.m */,
 				4138D19C18D31016001C0382 /* CFHomeViewController.xib */,
+				41F5D45518D9D9950084527A /* CFPostViewController.h */,
+				41F5D45618D9D9950084527A /* CFPostViewController.m */,
+				41F5D45718D9D9950084527A /* CFPostViewController.xib */,
+				41F5D45A18D9E3880084527A /* CFReplyViewController.h */,
+				41F5D45B18D9E3880084527A /* CFReplyViewController.m */,
+				41F5D45C18D9E3880084527A /* CFReplyViewController.xib */,
+				411E102B18DEEC1600CB8BA7 /* CFPasswordViewController.h */,
+				411E102C18DEEC1600CB8BA7 /* CFPasswordViewController.m */,
+				411E102D18DEEC1600CB8BA7 /* CFPasswordViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -291,11 +315,14 @@
 				41FC355D18C5EF3E009CF89A /* CFForumsViewController.xib in Resources */,
 				41FC355818C5EEF6009CF89A /* CFSelfPostsViewController.xib in Resources */,
 				41FC355318C5EEE8009CF89A /* CFCategoryViewController.xib in Resources */,
+				411E102F18DEEC1600CB8BA7 /* CFPasswordViewController.xib in Resources */,
 				41FC352318C5D29C009CF89A /* InfoPlist.strings in Resources */,
 				41FC356218C5F177009CF89A /* CFProfileViewController.xib in Resources */,
 				41FC354C18C5D3AC009CF89A /* CFLoginViewController.xib in Resources */,
 				4138D19E18D31016001C0382 /* CFHomeViewController.xib in Resources */,
 				41FC352B18C5D29D009CF89A /* Images.xcassets in Resources */,
+				41F5D45E18D9E3880084527A /* CFReplyViewController.xib in Resources */,
+				41F5D45918D9D9950084527A /* CFPostViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,7 +378,10 @@
 				41FC355C18C5EF3E009CF89A /* CFForumsViewController.m in Sources */,
 				4138D19D18D31016001C0382 /* CFHomeViewController.m in Sources */,
 				41FC354B18C5D3AC009CF89A /* CFLoginViewController.m in Sources */,
+				41F5D45D18D9E3880084527A /* CFReplyViewController.m in Sources */,
 				41FC352518C5D29C009CF89A /* main.m in Sources */,
+				41F5D45818D9D9950084527A /* CFPostViewController.m in Sources */,
+				411E102E18DEEC1600CB8BA7 /* CFPasswordViewController.m in Sources */,
 				41FC352918C5D29C009CF89A /* CFAppDelegate.m in Sources */,
 				41FC355218C5EEE8009CF89A /* CFCategoryViewController.m in Sources */,
 				41FC356118C5F177009CF89A /* CFProfileViewController.m in Sources */,

@@ -9,5 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface CFProfileViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UILabel *topLabel;
+@property (strong, nonatomic) IBOutlet UITextField *nameField;
+@property (strong, nonatomic) IBOutlet UITextField *emailField;
+
+@property (strong, nonatomic) IBOutlet FUIButton *updatePasswordBtn;
+
+@property (strong, nonatomic) IBOutlet FUIButton *updateDetailsBtn;
+
 
 @end

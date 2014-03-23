@@ -32,6 +32,13 @@
     self.usernameField.delegate = self;
     self.passwordField.delegate = self;
     _preferences = [NSUserDefaults  standardUserDefaults];
+    self.loginBtn.buttonColor = [UIColor carrotColor];
+    self.loginBtn.shadowColor = [UIColor pumpkinColor];
+    self.loginBtn.shadowHeight = 3.0f;
+    self.loginBtn.cornerRadius = 6.0f;
+    self.loginBtn.titleLabel.font = [UIFont boldFlatFontOfSize:16];
+    [self.loginBtn setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
+    [self.loginBtn setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
     // Do any additional setup after loading the view from its nib.
 }
 

@@ -64,6 +64,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
+    [cell configureFlatCellWithColor:[UIColor carrotColor] selectedColor:[UIColor pumpkinColor]];
+    cell.textLabel.textColor = [UIColor cloudsColor];
+    
     // Configure the cell...
     
     return cell;

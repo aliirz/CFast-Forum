@@ -7,6 +7,9 @@
 //
 
 #import "CFForumsViewController.h"
+#import "CJSONDeserializer.h"
+#import "CJSONSerializer.h"
+#import "CFPostViewController.h"
 
 @interface CFForumsViewController ()
 
@@ -61,14 +64,17 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
     NSDictionary *topic = [self.topics objectAtIndex:[indexPath row]];
     
     cell.textLabel.text = [topic objectForKey:@"TITLE"];
-    cell.detailTextLabel.text = [topic objectForKey:@"CREATED_BY"];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Created By %@",[topic objectForKey:@"CREATED_BY"]];
     
+    
+    [cell configureFlatCellWithColor:[UIColor carrotColor] selectedColor:[UIColor pumpkinColor]];
+    cell.textLabel.textColor = [UIColor cloudsColor];
     // Configure the cell...
     
     return cell;
@@ -113,22 +119,29 @@
 }
 */
 
-/*
+
 #pragma mark - Table view delegate
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-
-    // Pass the selected object to the new view controller.
+    NSDictionary *topic = [self.topics objectAtIndex:[indexPath row]];
     
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    [[LRResty client] get:[NSString stringWithFormat:@"http://192.168.100.100/Cfast.Api/api/conversation/%@",[topic objectForKey:@"ID"]] withBlock:^(LRRestyResponse *r)
+     {
+      
+         CFPostViewController *thread = [[CFPostViewController alloc]init];
+         NSLog(@"%@",[r asString]);
+         NSData *responseData = [[r asString] dataUsingEncoding:NSUTF8StringEncoding];
+         NSError *theError = nil;
+         thread.posts = [[CJSONDeserializer deserializer] deserializeAsArray:responseData error:&theError];
+         [self.navigationController pushViewController:thread animated:YES];
+         
+     }
+     ];
+    
 }
  
- */
+
 
 @end
