@@ -35,6 +35,9 @@
     self.replyBtn.titleLabel.font = [UIFont boldFlatFontOfSize:16];
     [self.replyBtn setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
     [self.replyBtn setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
+    
+    self.title = @"Compose Reply";
+    self.view.backgroundColor = [UIColor cloudsColor];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -48,7 +51,7 @@
     NSMutableDictionary *newReply = [[NSMutableDictionary alloc]initWithDictionary:self.replyTo];
     [newReply setValue:@"0" forKey:@"ID"];
     [newReply setValue:[[NSUserDefaults standardUserDefaults]objectForKey:@"username"] forKey:@"USERNAME"];
-    [newReply setValue:@"Test message" forKey:@"MESSAGE"];
+    [newReply setValue:self.replyTextView.text forKey:@"MESSAGE"];
     NSLog(@"%@",newReply);
 }
 @end

@@ -1,0 +1,22 @@
+PODS:
+  - FlatUIKit (1.3)
+  - LRResty (0.11.0):
+    - NSData+Base64 (~> 1.0)
+  - NSData+Base64 (1.0.0)
+  - TouchJSON (1.1)
+  - TPKeyboardAvoiding (1.2.3)
+
+DEPENDENCIES:
+  - FlatUIKit (~> 1.3)
+  - LRResty (~> 0.11)
+  - TouchJSON (~> 1.1)
+  - TPKeyboardAvoiding (~> 1.2)
+
+SPEC CHECKSUMS:
+  FlatUIKit: 3b32b52bb3c266477709cfe4812ab2c877ae942b
+  LRResty: 5e4c1b91bc5f878d64e965facd5cc9320b9ed3e2
+  NSData+Base64: 4819562faee4544e3cf5703f2139820b09732b28
+  TouchJSON: 9e53f4df141b7f972766292b00b46bccf29f179a
+  TPKeyboardAvoiding: 17995aaa6db26ac2a9fa8714a86509c5888f0392
+
+COCOAPODS: 0.29.0

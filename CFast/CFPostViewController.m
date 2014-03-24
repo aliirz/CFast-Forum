@@ -29,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.title = @"Posts";
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -77,8 +77,9 @@
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:17.0];
     cell.detailTextLabel.text = [thepost objectForKey:@"NAME"];
     
-    [cell configureFlatCellWithColor:[UIColor carrotColor] selectedColor:[UIColor pumpkinColor]];
-    cell.textLabel.textColor = [UIColor cloudsColor];
+    [cell configureFlatCellWithColor:[UIColor cloudsColor] selectedColor:[UIColor pumpkinColor]];
+    cell.textLabel.textColor = [UIColor carrotColor];
+    cell.detailTextLabel.textColor = [UIColor pumpkinColor];
     
     return cell;
 }

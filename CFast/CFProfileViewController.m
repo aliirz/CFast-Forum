@@ -7,6 +7,7 @@
 //
 
 #import "CFProfileViewController.h"
+#import "CFPasswordViewController.h"
 
 @interface CFProfileViewController ()
 
@@ -50,4 +51,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)updateDetails:(id)sender {
+}
+
+- (IBAction)showPWChangeView:(id)sender {
+    CFPasswordViewController *changePWView = [[CFPasswordViewController alloc]init];
+    [self.navigationController pushViewController:changePWView animated:YES];
+}
 @end

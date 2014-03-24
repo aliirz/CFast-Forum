@@ -60,6 +60,9 @@
                             <state key="normal" title="Update Details">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="updateDetails:" destination="-1" eventType="touchUpInside" id="h5p-S9-7iW"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0oo-kI-bcS" customClass="FUIButton">
                             <rect key="frame" x="88" y="374" width="144" height="37"/>
@@ -67,6 +70,9 @@
                             <state key="normal" title="Change Password">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="showPWChangeView:" destination="-1" eventType="touchUpInside" id="IGk-dw-mhO"/>
+                            </connections>
                         </button>
                     </subviews>
                 </scrollView>

@@ -9,7 +9,8 @@
 #import "CFLoginViewController.h"
 #import "CJSONDeserializer.h"
 #import "CJSONSerializer.h"
-#import "CFCategoryViewController.h"
+//#import "CFCategoryViewController.h"
+#import "CFHomeViewController.h"
 
 @interface CFLoginViewController ()
 
@@ -73,7 +74,7 @@
             [[NSUserDefaults standardUserDefaults]  setObject:[responseDictionary objectForKey:@"User_ID"] forKey:@"userid"];
             
             //ok cool let show the category view then
-            CFCategoryViewController *categoryVC = [[CFCategoryViewController alloc]init];
+            CFHomeViewController *homeVC = [[CFHomeViewController alloc]init];
             
 //            NSArray *categoriesArray =
 //            int countofObjs = [categoriesArray count];
@@ -84,8 +85,8 @@
 //                [categoriesFromResponse addObject:[dict objectForKey:@"TITLE"]];
 //                
 //            }
-            categoryVC.categories = [responseDictionary objectForKey:@"categories"];
-            [self.navigationController pushViewController:categoryVC animated:YES];
+//            categoryVC.categories = [responseDictionary objectForKey:@"categories"];
+            [self.navigationController pushViewController:homeVC animated:YES];
             
             
         }

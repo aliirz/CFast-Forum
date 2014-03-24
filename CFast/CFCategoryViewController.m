@@ -29,6 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Categories";
+    
 
     if(self.loggedIn)
     {
@@ -40,6 +42,8 @@
             [self.tableView reloadData];
             }
          ];
+        
+        self.tableView.backgroundColor = [UIColor cloudsColor];
     }
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -79,8 +83,8 @@
     }
     
     
-    [cell configureFlatCellWithColor:[UIColor carrotColor] selectedColor:[UIColor pumpkinColor]];
-    cell.textLabel.textColor = [UIColor cloudsColor];
+    [cell configureFlatCellWithColor:[UIColor cloudsColor] selectedColor:[UIColor pumpkinColor]];
+    cell.textLabel.textColor = [UIColor pumpkinColor];
     
     NSDictionary *category = [self.categories objectAtIndex:[indexPath row]];
     cell.textLabel.text = [category objectForKey:@"TITLE"];

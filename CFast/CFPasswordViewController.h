@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CFPasswordViewController : UIViewController
+@property (strong, nonatomic) IBOutlet FUIButton *passwordChangeBtn;
+- (IBAction)changePsswd:(id)sender;
 
 @end

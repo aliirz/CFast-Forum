@@ -29,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.title = @"Topics";
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -73,8 +73,9 @@
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Created By %@",[topic objectForKey:@"CREATED_BY"]];
     
     
-    [cell configureFlatCellWithColor:[UIColor carrotColor] selectedColor:[UIColor pumpkinColor]];
-    cell.textLabel.textColor = [UIColor cloudsColor];
+    [cell configureFlatCellWithColor:[UIColor cloudsColor] selectedColor:[UIColor pumpkinColor]];
+    cell.textLabel.textColor = [UIColor carrotColor];
+    cell.detailTextLabel.textColor = [UIColor pumpkinColor];
     // Configure the cell...
     
     return cell;

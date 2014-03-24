@@ -22,7 +22,16 @@
     UINavigationController *nav = [[UINavigationController alloc]init];
     
     [nav.navigationBar configureFlatNavigationBarWithColor:[UIColor pumpkinColor]];
+    
+    nav.navigationBar.barTintColor = [UIColor blackColor];
+    nav.navigationBar.tintColor = [UIColor cloudsColor];
+    [nav.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor cloudsColor]}];
+    nav.navigationBar.translucent = NO;
 
+//    [UIBarButtonItem configureFlatButtonsWithColor:[UIColor wetAsphaltColor]
+//                                  highlightedColor:[UIColor concreteColor]
+//                                      cornerRadius:2];
+    
     CFLoginViewController *loginVC = [[CFLoginViewController alloc]init];
     CFHomeViewController  *homeVC = [[CFHomeViewController alloc]init];
 //    CFCategoryViewController *categoryVC = [[CFCategoryViewController alloc] init];

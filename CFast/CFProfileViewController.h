@@ -16,6 +16,8 @@
 @property (strong, nonatomic) IBOutlet FUIButton *updatePasswordBtn;
 
 @property (strong, nonatomic) IBOutlet FUIButton *updateDetailsBtn;
+- (IBAction)updateDetails:(id)sender;
 
+- (IBAction)showPWChangeView:(id)sender;
 
 @end
