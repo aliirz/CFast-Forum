@@ -11,5 +11,7 @@
 @interface CFPostViewController : UITableViewController
 
 @property (nonatomic, strong) NSArray *posts;
+@property BOOL reFetch;
+@property (nonatomic, strong) NSString *postID;
 
 @end

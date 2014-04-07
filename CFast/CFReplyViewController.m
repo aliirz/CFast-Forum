@@ -48,10 +48,45 @@
 }
 
 - (IBAction)reply:(id)sender {
-    NSMutableDictionary *newReply = [[NSMutableDictionary alloc]initWithDictionary:self.replyTo];
-    [newReply setValue:@"0" forKey:@"ID"];
-    [newReply setValue:[[NSUserDefaults standardUserDefaults]objectForKey:@"username"] forKey:@"USERNAME"];
-    [newReply setValue:self.replyTextView.text forKey:@"MESSAGE"];
+    
+    NSMutableDictionary *newReply = [[NSMutableDictionary alloc]init];
+    [newReply setObject:@"0" forKey:@"ID"];
+    [newReply setObject:[[NSUserDefaults standardUserDefaults]objectForKey:@"username"] forKey:@"NAME"];
+    [newReply setObject:self.replyTextView.text forKey:@"MESSAGE"];
+    [newReply setObject:[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"] forKey:@"USERID"];
+    [newReply setObject:[self.replyTo objectForKey:@"THREAD"] forKey:@"THREAD"];
+    [newReply setObject:[self.replyTo objectForKey:@"CATID"] forKey:@"CATID"];
+    
+    
+    NSData *jsonData = [[CJSONSerializer serializer] serializeObject:newReply error:nil];
+    
+    NSDictionary *requestHeaders = [NSDictionary
+                                    dictionaryWithObject:@"application/json" forKey:@"Content-Type"];
+
+    
+    [[LRResty client] post:@"http://cfast-api.fireflycommunicator.com/api/conversation" payload:jsonData headers:requestHeaders withBlock:^(LRRestyResponse *response){
+        NSString *msg = [response asString];
+        //            NSLog(@"%@",msg);
+//        NSData *responseData = [msg dataUsingEncoding:NSUTF8StringEncoding];
+//        NSError *theError = nil;
+//        NSDictionary *responseDictionary = [[CJSONDeserializer deserializer] deserializeAsDictionary:responseData error:&theError];
+//        //        NSDictionary *firstDict = [responseArray objectAtIndex:0];      //to get the user and pass and too nsuerdefaults.
+        if([msg isEqual:@"\"Comment Inserted\""])
+        {
+//            self.navigationController po
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        else
+        {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Sorry" message:@"Could not post this reply." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+        
+        
+        //save the details in nsuserdefaults
+        
+    }];
+    
     NSLog(@"%@",newReply);
 }
 @end

@@ -34,13 +34,27 @@
 
     if(self.loggedIn)
     {
-        [[LRResty client] get:@"http://192.168.100.100/Cfast.Api/api/post" withBlock:^(LRRestyResponse *r)
+        RTSpinKitView *spinner = [[RTSpinKitView alloc] initWithStyle:RTSpinKitViewStyleWanderingCubes color:[UIColor cloudsColor]];
+        
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.square = YES;
+        hud.mode = MBProgressHUDModeCustomView;
+        hud.customView = spinner;
+        hud.labelText = NSLocalizedString(@"Please Wait...", @"Please Wait...");
+        
+        [spinner startAnimating];
+        
+        [[LRResty client] get:@"http://cfast-api.fireflycommunicator.com/api/post" withBlock:^(LRRestyResponse *r)
         {
             NSData *responseData = [[r asString] dataUsingEncoding:NSUTF8StringEncoding];
             NSError *theError = nil;
             self.categories = [[CJSONDeserializer deserializer] deserializeAsArray:responseData error:&theError];
             [self.tableView reloadData];
-            }
+            [spinner stopAnimating];
+            [hud hide:YES];
+//            [hud removeFromSuperview];
+
+        }
          ];
         
         self.tableView.backgroundColor = [UIColor cloudsColor];
@@ -141,11 +155,23 @@
     CFForumsViewController *posts = [[CFForumsViewController alloc]init];
     NSDictionary *category = [self.categories objectAtIndex:[indexPath row]];
     
-    [[LRResty client] get:[NSString stringWithFormat:@"http://192.168.100.100/Cfast.Api/api/post/%@",[category objectForKey:@"ID"]] withBlock:^(LRRestyResponse *r)
+    RTSpinKitView *spinner = [[RTSpinKitView alloc] initWithStyle:RTSpinKitViewStyleWanderingCubes color:[UIColor cloudsColor]];
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.square = YES;
+    hud.mode = MBProgressHUDModeCustomView;
+    hud.customView = spinner;
+    hud.labelText = NSLocalizedString(@"Please Wait...", @"Please Wait...");
+    
+    [spinner startAnimating];
+
+    [[LRResty client] get:[NSString stringWithFormat:@"http://cfast-api.fireflycommunicator.com/api/post/%@",[category objectForKey:@"ID"]] withBlock:^(LRRestyResponse *r)
     {
         
         NSData *responseData = [[r asString] dataUsingEncoding:NSUTF8StringEncoding];
         NSError *theError = nil;
+        [spinner stopAnimating];
+        [hud hide:YES];
         posts.topics = [[CJSONDeserializer deserializer] deserializeAsArray:responseData error:&theError];
         [self.navigationController pushViewController:posts animated:YES];
 

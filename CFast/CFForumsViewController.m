@@ -128,14 +128,27 @@
 {
     NSDictionary *topic = [self.topics objectAtIndex:[indexPath row]];
     
-    [[LRResty client] get:[NSString stringWithFormat:@"http://192.168.100.100/Cfast.Api/api/conversation/%@",[topic objectForKey:@"ID"]] withBlock:^(LRRestyResponse *r)
+    RTSpinKitView *spinner = [[RTSpinKitView alloc] initWithStyle:RTSpinKitViewStyleWanderingCubes color:[UIColor cloudsColor]];
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.square = YES;
+    hud.mode = MBProgressHUDModeCustomView;
+    hud.customView = spinner;
+    hud.labelText = NSLocalizedString(@"Please Wait...", @"Please Wait...");
+    
+    [spinner startAnimating];
+    
+    [[LRResty client] get:[NSString stringWithFormat:@"http://cfast-api.fireflycommunicator.com/api/conversation/%@",[topic objectForKey:@"ID"]] withBlock:^(LRRestyResponse *r)
      {
       
          CFPostViewController *thread = [[CFPostViewController alloc]init];
+         thread.postID = [topic objectForKey:@"ID"];
          NSLog(@"%@",[r asString]);
          NSData *responseData = [[r asString] dataUsingEncoding:NSUTF8StringEncoding];
          NSError *theError = nil;
          thread.posts = [[CJSONDeserializer deserializer] deserializeAsArray:responseData error:&theError];
+         [spinner stopAnimating];
+         [hud hide:YES];
          [self.navigationController pushViewController:thread animated:YES];
          
      }

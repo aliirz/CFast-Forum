@@ -10,6 +10,8 @@
 #import "CJSONDeserializer.h"
 #import "CJSONSerializer.h"
 #import "CFReplyViewController.h"
+#import "CJSONDeserializer.h"
+#import "CJSONSerializer.h"
 
 @interface CFPostViewController ()
 
@@ -35,6 +37,33 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    if(self.reFetch)
+    {
+        RTSpinKitView *spinner = [[RTSpinKitView alloc] initWithStyle:RTSpinKitViewStyleWanderingCubes color:[UIColor cloudsColor]];
+        
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.square = YES;
+        hud.mode = MBProgressHUDModeCustomView;
+        hud.customView = spinner;
+        hud.labelText = NSLocalizedString(@"Please Wait...", @"Please Wait...");
+        
+        [spinner startAnimating];
+
+        
+        [[LRResty client] get:[NSString stringWithFormat:@"http://cfast-api.fireflycommunicator.com/api/conversation/%@",self.postID] withBlock:^(LRRestyResponse *r)
+         {
+             NSData *responseData = [[r asString] dataUsingEncoding:NSUTF8StringEncoding];
+             NSError *theError = nil;
+             self.posts = [[CJSONDeserializer deserializer] deserializeAsArray:responseData error:&theError];
+             [self.tableView reloadData];
+             [spinner stopAnimating];
+             [hud hide:YES];
+
+         }];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,15 +96,26 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
         cell.textLabel.numberOfLines = 0;
+
     }
     
     
     
     // Configure the cell...
     NSDictionary *thepost = [self.posts objectAtIndex:[indexPath row]];
-    cell.textLabel.text = [thepost objectForKey:@"MESSAGE"];
+    NSTimeInterval seconds = [[thepost objectForKey:@"DATETIME"] doubleValue];
+    NSDate *epochNSDate = [[NSDate alloc] initWithTimeIntervalSince1970:seconds];
+    NSString *msg = [NSString stringWithFormat:@"%@ \n\n %@ on %@ \n\n\n %@",[thepost objectForKey:@"MESSAGE"],[thepost objectForKey:@"NAME"],epochNSDate, @"Click to Reply"];
+    cell.textLabel.text = msg;
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:17.0];
-    cell.detailTextLabel.text = [thepost objectForKey:@"NAME"];
+    
+    
+//    NSLog (@"Epoch time %@ equates to UTC %@", epochTime, epochNSDate);
+    
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//    NSString *detail =[NSString stringWithFormat:@"%@ on %@",[thepost objectForKey:@"NAME"],epochNSDate];
+//    cell.detailTextLabel.text = detail;
     
     [cell configureFlatCellWithColor:[UIColor cloudsColor] selectedColor:[UIColor pumpkinColor]];
     cell.textLabel.textColor = [UIColor carrotColor];
@@ -87,7 +127,9 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *thepost = [self.posts objectAtIndex:[indexPath row]];
-    NSString *cellText = [thepost objectForKey:@"MESSAGE"];
+    NSTimeInterval seconds = [[thepost objectForKey:@"DATETIME"] doubleValue];
+    NSDate *epochNSDate = [[NSDate alloc] initWithTimeIntervalSince1970:seconds];
+    NSString *cellText = [NSString stringWithFormat:@"%@ \n\n %@ on %@ \n\n\n %@",[thepost objectForKey:@"MESSAGE"],[thepost objectForKey:@"NAME"],epochNSDate,@"Click to Reply"];
     UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:17.0];
     CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
     CGSize labelSize = [cellText sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
@@ -142,7 +184,8 @@
 {
     CFReplyViewController *replyVC = [[CFReplyViewController alloc]init];
     replyVC.replyTo = [self.posts objectAtIndex:[indexPath row]];
-    
+    self.reFetch = YES;
+//    self.postID = (int)[[self.posts objectAtIndex:[indexPath row]] objectForKey:@"THREAD"];
     [self.navigationController pushViewController:replyVC animated:YES];
 }
  

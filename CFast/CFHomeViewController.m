@@ -9,6 +9,7 @@
 #import "CFHomeViewController.h"
 #import "CFCategoryViewController.h"
 #import "CFProfileViewController.h"
+#import "CFLoginViewController.h"
 
 @interface CFHomeViewController ()
 
@@ -43,7 +44,17 @@
     self.settingsButton.titleLabel.font = [UIFont boldFlatFontOfSize:16];
     [self.settingsButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
     [self.settingsButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
+    
+  
     // Do any additional setup after loading the view from its nib.
+}
+
+-(void) viewDidAppear:(BOOL)animated{
+    NSString *userid = [[NSUserDefaults standardUserDefaults] stringForKey:@"userid"];
+    if(userid == NULL){
+        CFLoginViewController *login = [[CFLoginViewController alloc]init];
+        [self presentViewController:login animated:YES completion:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning

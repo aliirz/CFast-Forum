@@ -55,12 +55,23 @@
     [data setObject:self.usernameField.text forKey:@"Username"];
     [data setObject:self.passwordField.text forKey:@"Password"];
     
+    
+    RTSpinKitView *spinner = [[RTSpinKitView alloc] initWithStyle:RTSpinKitViewStyleWanderingCubes color:[UIColor cloudsColor]];
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.square = YES;
+    hud.mode = MBProgressHUDModeCustomView;
+    hud.customView = spinner;
+    hud.labelText = NSLocalizedString(@"Please Wait...", @"Please Wait...");
+    
+    [spinner startAnimating];
+    
     NSData *jsonData = [[CJSONSerializer serializer] serializeObject:data error:&error];
     
     NSDictionary *requestHeaders = [NSDictionary
                                     dictionaryWithObject:@"application/json" forKey:@"Content-Type"];
     
-    [[LRResty client] post:@"http://192.168.100.100/Cfast.Api/api/user" payload:jsonData headers:requestHeaders withBlock:^(LRRestyResponse *response){
+    [[LRResty client] post:@"http://cfast-api.fireflycommunicator.com/api/user" payload:jsonData headers:requestHeaders withBlock:^(LRRestyResponse *response){
         NSString *msg = [response asString];
 //            NSLog(@"%@",msg);
         NSData *responseData = [msg dataUsingEncoding:NSUTF8StringEncoding];
@@ -74,8 +85,8 @@
             [[NSUserDefaults standardUserDefaults]  setObject:[responseDictionary objectForKey:@"User_ID"] forKey:@"userid"];
             
             //ok cool let show the category view then
-            CFHomeViewController *homeVC = [[CFHomeViewController alloc]init];
-            
+//            CFHomeViewController *homeVC = [[CFHomeViewController alloc]init];
+        
 //            NSArray *categoriesArray =
 //            int countofObjs = [categoriesArray count];
 //            NSMutableArray *categoriesFromResponse = [[NSMutableArray alloc]init];
@@ -86,12 +97,15 @@
 //                
 //            }
 //            categoryVC.categories = [responseDictionary objectForKey:@"categories"];
-            [self.navigationController pushViewController:homeVC animated:YES];
+            [spinner stopAnimating];
+            [self dismissViewControllerAnimated:YES completion:nil];
+//            [self.navigationController pushViewController:homeVC animated:YES];
             
             
         }
         else
         {
+            [spinner stopAnimating];
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Sorry" message:@"Invalid username or password" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
             [alert show];
         }

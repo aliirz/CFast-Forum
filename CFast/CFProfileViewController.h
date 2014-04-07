@@ -17,7 +17,9 @@
 
 @property (strong, nonatomic) IBOutlet FUIButton *updateDetailsBtn;
 - (IBAction)updateDetails:(id)sender;
+@property (strong, nonatomic) IBOutlet FUIButton *logoutBtn;
+- (IBAction)logout:(id)sender;
 
-- (IBAction)showPWChangeView:(id)sender;
+//- (IBAction)showPWChangeView:(id)sender;
 
 @end

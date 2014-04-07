@@ -15,5 +15,7 @@
     #import <Foundation/Foundation.h>
     #import "LRResty.h"
     #import "FlatUIKit.h"
-    #import  "TPKeyboardAvoidingScrollView.h"
+    #import "TPKeyboardAvoidingScrollView.h"
+    #import "MBProgressHUD.h"
+    #import "RTSpinKitView.h"
 #endif

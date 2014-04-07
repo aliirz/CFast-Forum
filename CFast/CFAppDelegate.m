@@ -12,6 +12,7 @@
 #import "CJSONDeserializer.h"
 #import "CJSONSerializer.h"
 #import "CFHomeViewController.h"
+#import "TestFlight.h"
 @implementation CFAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -20,6 +21,8 @@
     // Override point for customization after application launch.
     
     UINavigationController *nav = [[UINavigationController alloc]init];
+    
+    [TestFlight takeOff:@"7f320055-3ea4-40d3-a9de-40a22202a081"];
     
     [nav.navigationBar configureFlatNavigationBarWithColor:[UIColor pumpkinColor]];
     
@@ -32,29 +35,29 @@
 //                                  highlightedColor:[UIColor concreteColor]
 //                                      cornerRadius:2];
     
-    CFLoginViewController *loginVC = [[CFLoginViewController alloc]init];
+//    CFLoginViewController *loginVC = [[CFLoginViewController alloc]init];
     CFHomeViewController  *homeVC = [[CFHomeViewController alloc]init];
 //    CFCategoryViewController *categoryVC = [[CFCategoryViewController alloc] init];
     
     
 //    NSUserDefaults *_preferences = [[NSUserDefaults alloc]init];
     NSString *userid = [[NSUserDefaults standardUserDefaults] stringForKey:@"userid"];
-    if(userid != NULL)
-    {
-//        [[LRResty client] get:@"http://192.168.100.100/Cfast.Api/api/post" withBlock:^(LRRestyResponse *r) {
-//            NSData *responseData = [[r asString] dataUsingEncoding:NSUTF8StringEncoding];
-//            NSError *theError = nil;
-//            NSArray *responseArray = [[CJSONDeserializer deserializer] deserializeAsArray:responseData error:&theError];
-//        }];
-//        categoryVC.loggedIn = YES;
-        
+//    if(userid != NULL)
+//    {
+////        [[LRResty client] get:@"http://192.168.100.100/Cfast.Api/api/post" withBlock:^(LRRestyResponse *r) {
+////            NSData *responseData = [[r asString] dataUsingEncoding:NSUTF8StringEncoding];
+////            NSError *theError = nil;
+////            NSArray *responseArray = [[CJSONDeserializer deserializer] deserializeAsArray:responseData error:&theError];
+////        }];
+////        categoryVC.loggedIn = YES;
+//        
+//        [nav pushViewController:homeVC animated:NO];
+//        
+//    }
+//    else
+//    {
         [nav pushViewController:homeVC animated:NO];
-        
-    }
-    else
-    {
-        [nav pushViewController:loginVC animated:NO];
-    }
+//    }
     
     self.window.rootViewController = nav;
     
