@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0510"
+   LastUpgradeVersion = "0500"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7E50B244566A426891FD20DA"
+               BlueprintIdentifier = "974C5B1FC84D4247A29FB3C9"
                BuildableName = "libPods-LRResty.a"
                BlueprintName = "Pods-LRResty"
                ReferencedContainer = "container:Pods.xcodeproj">

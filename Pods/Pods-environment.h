@@ -6,6 +6,12 @@
 // project.
 
 
+// DateTools
+#define COCOAPODS_POD_AVAILABLE_DateTools
+#define COCOAPODS_VERSION_MAJOR_DateTools 1
+#define COCOAPODS_VERSION_MINOR_DateTools 0
+#define COCOAPODS_VERSION_PATCH_DateTools 0
+
 // FlatUIKit
 #define COCOAPODS_POD_AVAILABLE_FlatUIKit
 #define COCOAPODS_VERSION_MAJOR_FlatUIKit 1
@@ -41,6 +47,12 @@
 #define COCOAPODS_VERSION_MAJOR_TPKeyboardAvoiding 1
 #define COCOAPODS_VERSION_MINOR_TPKeyboardAvoiding 2
 #define COCOAPODS_VERSION_PATCH_TPKeyboardAvoiding 3
+
+// TSMiniWebBrowser
+#define COCOAPODS_POD_AVAILABLE_TSMiniWebBrowser
+#define COCOAPODS_VERSION_MAJOR_TSMiniWebBrowser 1
+#define COCOAPODS_VERSION_MINOR_TSMiniWebBrowser 0
+#define COCOAPODS_VERSION_PATCH_TSMiniWebBrowser 1
 
 // TouchJSON
 #define COCOAPODS_POD_AVAILABLE_TouchJSON

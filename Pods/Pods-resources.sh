@@ -51,6 +51,13 @@ install_resource "FlatUIKit/Resources/Lato-Italic.ttf"
 install_resource "FlatUIKit/Resources/Lato-Light.ttf"
 install_resource "FlatUIKit/Resources/Lato-LightItalic.ttf"
 install_resource "FlatUIKit/Resources/Lato-Regular.ttf"
+install_resource "TSMiniWebBrowser/TSMiniWebBrowser/images/back_icon.png"
+install_resource "TSMiniWebBrowser/TSMiniWebBrowser/images/back_icon@2x.png"
+install_resource "TSMiniWebBrowser/TSMiniWebBrowser/images/forward_icon.png"
+install_resource "TSMiniWebBrowser/TSMiniWebBrowser/images/forward_icon@2x.png"
+install_resource "TSMiniWebBrowser/TSMiniWebBrowser/images/reload_icon.png"
+install_resource "TSMiniWebBrowser/TSMiniWebBrowser/images/reload_icon@2x.png"
+install_resource "TSMiniWebBrowser/TSMiniWebBrowser/TSMiniWebBrowser.xib"
 
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 if [[ "${ACTION}" == "install" ]]; then

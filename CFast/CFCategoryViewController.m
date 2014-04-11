@@ -99,9 +99,27 @@
     
     [cell configureFlatCellWithColor:[UIColor cloudsColor] selectedColor:[UIColor pumpkinColor]];
     cell.textLabel.textColor = [UIColor pumpkinColor];
+    cell.backgroundColor = [UIColor cloudsColor];
     
     NSDictionary *category = [self.categories objectAtIndex:[indexPath row]];
     cell.textLabel.text = [category objectForKey:@"TITLE"];
+    
+    switch ([indexPath row]) {
+        case 0:
+            cell.imageView.image = [UIImage imageNamed:@"File_Profile.png"];
+            break;
+        case 1:
+            cell.imageView.image = [UIImage imageNamed:@"Box_Closed.png"];
+            break;
+        case 2:
+            cell.imageView.image = [UIImage imageNamed:@"Venn_Diagram.png"];
+            break;
+        case 3:
+            cell.imageView.image = [UIImage imageNamed:@"Pic_iOS.png"];
+            break;
+        default:
+            break;
+    }
     
     // Configure the cell...
     

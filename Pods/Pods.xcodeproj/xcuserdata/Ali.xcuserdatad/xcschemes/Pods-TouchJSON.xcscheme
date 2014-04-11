@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0510"
+   LastUpgradeVersion = "0500"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6A7F1569258B4F6591E1B33B"
+               BlueprintIdentifier = "CB4B8A8F84E34D33A0B75313"
                BuildableName = "libPods-TouchJSON.a"
                BlueprintName = "Pods-TouchJSON"
                ReferencedContainer = "container:Pods.xcodeproj">

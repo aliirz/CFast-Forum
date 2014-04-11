@@ -12,6 +12,7 @@
 #import "CFReplyViewController.h"
 #import "CJSONDeserializer.h"
 #import "CJSONSerializer.h"
+#import "CFViewPostController.h"
 
 @interface CFPostViewController ()
 
@@ -105,7 +106,7 @@
     NSDictionary *thepost = [self.posts objectAtIndex:[indexPath row]];
     NSTimeInterval seconds = [[thepost objectForKey:@"DATETIME"] doubleValue];
     NSDate *epochNSDate = [[NSDate alloc] initWithTimeIntervalSince1970:seconds];
-    NSString *msg = [NSString stringWithFormat:@"%@ \n\n %@ on %@ \n\n\n %@",[thepost objectForKey:@"MESSAGE"],[thepost objectForKey:@"NAME"],epochNSDate, @"Click to Reply"];
+    NSString *msg = [NSString stringWithFormat:@"%@\n\n%@\n%@\n\n---------\nReply\n---------",[thepost objectForKey:@"MESSAGE"],[thepost objectForKey:@"NAME"],[epochNSDate formattedDateWithFormat:@"dd/MM/YY HH:mm"]];
     cell.textLabel.text = msg;
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:17.0];
     
@@ -129,7 +130,7 @@
     NSDictionary *thepost = [self.posts objectAtIndex:[indexPath row]];
     NSTimeInterval seconds = [[thepost objectForKey:@"DATETIME"] doubleValue];
     NSDate *epochNSDate = [[NSDate alloc] initWithTimeIntervalSince1970:seconds];
-    NSString *cellText = [NSString stringWithFormat:@"%@ \n\n %@ on %@ \n\n\n %@",[thepost objectForKey:@"MESSAGE"],[thepost objectForKey:@"NAME"],epochNSDate,@"Click to Reply"];
+    NSString *cellText = [NSString stringWithFormat:@"%@\n\n%@\n%@\n\n----\nReply\n----",[thepost objectForKey:@"MESSAGE"],[thepost objectForKey:@"NAME"],[epochNSDate formattedDateWithFormat:@"dd/MM/YY HH:mm"]];
     UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:17.0];
     CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
     CGSize labelSize = [cellText sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
@@ -182,11 +183,15 @@
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CFReplyViewController *replyVC = [[CFReplyViewController alloc]init];
-    replyVC.replyTo = [self.posts objectAtIndex:[indexPath row]];
+    CFViewPostController *viewPost = [[CFViewPostController alloc]init];
+    viewPost.message = [self.posts objectAtIndex:[indexPath row]];
     self.reFetch = YES;
-//    self.postID = (int)[[self.posts objectAtIndex:[indexPath row]] objectForKey:@"THREAD"];
-    [self.navigationController pushViewController:replyVC animated:YES];
+    self.postID = [[self.posts objectAtIndex:[indexPath row]] objectForKey:@"THREAD"];
+    [self.navigationController pushViewController:viewPost animated:YES];
+//    CFReplyViewController *replyVC = [[CFReplyViewController alloc]init];
+//    replyVC.replyTo = [self.posts objectAtIndex:[indexPath row]];
+   
+//    [self.navigationController pushViewController:replyVC animated:YES];
 }
  
 

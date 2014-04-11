@@ -13,7 +13,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *nameField;
 @property (strong, nonatomic) IBOutlet UITextField *emailField;
 
-@property (strong, nonatomic) IBOutlet FUIButton *updatePasswordBtn;
+//@property (strong, nonatomic) IBOutlet FUIButton *updatePasswordBtn;
 
 @property (strong, nonatomic) IBOutlet FUIButton *updateDetailsBtn;
 - (IBAction)updateDetails:(id)sender;

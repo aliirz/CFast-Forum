@@ -44,6 +44,13 @@
     self.logoutBtn.titleLabel.font = [UIFont boldFlatFontOfSize:14];
     [self.logoutBtn setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
     [self.logoutBtn setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
+    
+    
+    self.nameField.text = [[NSUserDefaults standardUserDefaults]objectForKey:@"name"];
+    self.emailField.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"email"];
+//                           setObject:[responseDictionary objectForKey:@"Name"] forKey:@"name"];
+//    [[NSUserDefaults standardUserDefaults] setObject:[responseDictionary objectForKey:@"Email"] forKey:@"email"];
+    
     // Do any additional setup after loading the view from its nib.
 }
 

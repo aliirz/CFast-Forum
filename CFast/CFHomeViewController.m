@@ -45,6 +45,7 @@
     [self.settingsButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
     [self.settingsButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
     
+    self.view.backgroundColor = [UIColor cloudsColor];
   
     // Do any additional setup after loading the view from its nib.
 }

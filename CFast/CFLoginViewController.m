@@ -77,12 +77,15 @@
         NSData *responseData = [msg dataUsingEncoding:NSUTF8StringEncoding];
         NSError *theError = nil;
         NSDictionary *responseDictionary = [[CJSONDeserializer deserializer] deserializeAsDictionary:responseData error:&theError];
+        NSLog(@"%@",responseDictionary);
 //        NSDictionary *firstDict = [responseArray objectAtIndex:0];      //to get the user and pass and too nsuerdefaults.
         if([[responseDictionary valueForKey:@"Status"] isEqual:[NSNumber numberWithBool:YES]])
         {
             [[NSUserDefaults standardUserDefaults] setObject:self.usernameField.text forKey:@"username"];
             [[NSUserDefaults standardUserDefaults] setObject:self.passwordField.text forKey:@"password"];
             [[NSUserDefaults standardUserDefaults]  setObject:[responseDictionary objectForKey:@"User_ID"] forKey:@"userid"];
+            [[NSUserDefaults standardUserDefaults] setObject:[responseDictionary objectForKey:@"Email"] forKey:@"email"];
+            [[NSUserDefaults standardUserDefaults] setObject:[responseDictionary objectForKey:@"Name"] forKey:@"name"];
             
             //ok cool let show the category view then
 //            CFHomeViewController *homeVC = [[CFHomeViewController alloc]init];
@@ -98,6 +101,7 @@
 //            }
 //            categoryVC.categories = [responseDictionary objectForKey:@"categories"];
             [spinner stopAnimating];
+            [hud hide:YES];
             [self dismissViewControllerAnimated:YES completion:nil];
 //            [self.navigationController pushViewController:homeVC animated:YES];
             
@@ -106,6 +110,7 @@
         else
         {
             [spinner stopAnimating];
+            [hud hide:YES];
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Sorry" message:@"Invalid username or password" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
             [alert show];
         }

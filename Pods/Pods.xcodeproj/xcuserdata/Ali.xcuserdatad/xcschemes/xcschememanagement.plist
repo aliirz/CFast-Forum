@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-DateTools.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-FlatUIKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -34,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-TSMiniWebBrowser.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-TouchJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,42 +57,52 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>13B42130BF03420D94EC5CB6</key>
+		<key>1507BB33EAA747249AAD112E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6A7F1569258B4F6591E1B33B</key>
+		<key>1E012CE6819F4C78ACF7AFE0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7E50B244566A426891FD20DA</key>
+		<key>4083CCF908D54943A87EBB57</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9137B6DCCC6C48FAB6FD2D87</key>
+		<key>48CF1A6C08464A41B5C70FB7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>95DDDC5AEC47443298612FBD</key>
+		<key>974C5B1FC84D4247A29FB3C9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B553275D75CD4124AE734AFD</key>
+		<key>9970753A37E8416B961B02F3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C670203BF0874E26813419F8</key>
+		<key>9F44B033913B4DEE8755B188</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D1A33D87FCE44ECFB9CBA917</key>
+		<key>CB4B8A8F84E34D33A0B75313</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EECEBE8F3CFF4320991F98A3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FFC21F9B3C6C45C1BF4A01F9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

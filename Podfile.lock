@@ -1,4 +1,5 @@
 PODS:
+  - DateTools (1.0)
   - FlatUIKit (1.3)
   - LRResty (0.11.0):
     - NSData+Base64 (~> 1.0)
@@ -7,22 +8,27 @@ PODS:
   - SpinKit (1.0.1)
   - TouchJSON (1.1)
   - TPKeyboardAvoiding (1.2.3)
+  - TSMiniWebBrowser (1.0.1)
 
 DEPENDENCIES:
+  - DateTools
   - FlatUIKit (~> 1.3)
   - LRResty (~> 0.11)
   - MBProgressHUD (~> 0.8)
   - SpinKit (~> 1.0.1)
   - TouchJSON (~> 1.1)
   - TPKeyboardAvoiding (~> 1.2)
+  - TSMiniWebBrowser (~> 1.0)
 
 SPEC CHECKSUMS:
+  DateTools: 6123dfa046b91a444d5fb53e67f970bfd8374057
   FlatUIKit: 3b32b52bb3c266477709cfe4812ab2c877ae942b
-  LRResty: 5e4c1b91bc5f878d64e965facd5cc9320b9ed3e2
+  LRResty: f5d58bfbde8261e995d50f8caf9080dac05a9f52
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
-  NSData+Base64: 4819562faee4544e3cf5703f2139820b09732b28
+  NSData+Base64: bd5dacbc799c0339bd6a961a9ea80dd6eba11b33
   SpinKit: c7490233be81d8daf41da05dc463351423658aad
   TouchJSON: 9e53f4df141b7f972766292b00b46bccf29f179a
   TPKeyboardAvoiding: 17995aaa6db26ac2a9fa8714a86509c5888f0392
+  TSMiniWebBrowser: b0d1e578f250f29615541093564df0c2aebcda07
 
 COCOAPODS: 0.29.0

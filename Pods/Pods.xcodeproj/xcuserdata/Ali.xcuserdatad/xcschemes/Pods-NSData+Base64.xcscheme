@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0510"
+   LastUpgradeVersion = "0500"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D1A33D87FCE44ECFB9CBA917"
+               BlueprintIdentifier = "1507BB33EAA747249AAD112E"
                BuildableName = "libPods-NSData+Base64.a"
                BlueprintName = "Pods-NSData+Base64"
                ReferencedContainer = "container:Pods.xcodeproj">
