@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F6362E20-E012-4472-B69E-391499ACC635</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CFast</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>50B0F232-2CEA-4CF1-9881-FEBC3D101D66</key>
+		<string>https://github.com/aliirz/CFast-Forum.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CFast.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>50B0F232-2CEA-4CF1-9881-FEBC3D101D66</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/aliirz/CFast-Forum.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>50B0F232-2CEA-4CF1-9881-FEBC3D101D66</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>50B0F232-2CEA-4CF1-9881-FEBC3D101D66</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CFast</string>
+		</dict>
+	</array>
+</dict>
+</plist>
